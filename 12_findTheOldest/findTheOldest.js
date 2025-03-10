@@ -7,9 +7,7 @@ const findTheOldest = function(peopleArray) {
         }
        newArray.push([person.name, (person.yearOfDeath - person.yearOfBirth)])
     });
-
     newArray.sort((a,b) => b[1] - a[1]);
-
     return peopleArray.find((person) => person.name === newArray[0][0]);
 };
 
