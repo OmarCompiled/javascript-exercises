@@ -1,15 +1,13 @@
 const palindromes = function (string) {
-    let reverseString = '';
-    string = string.replaceAll(/(!|@|#|,|%|&| |[0-9])+/g, '').toLowerCase();
-    for(let i = string.length - 1; i >= 0; i--) {
-        reverseString += string.at(i);
-    }
-    if(string === reverseString) {
-        return true;
-    }
-    
-    return false;
+    const alphanumerical = 'abcdefghijklmnopqrstuvwxyz0123456789';
+    const newString = string.toLowerCase().split('').filter(character => alphanumerical.includes(character)).join('');
+    const reversedString = newString.split('').reverse().join('');
+
+    return newString === reversedString;
 };
 
 // Do not edit below this line
 module.exports = palindromes;
+
+// split() splits each char and puts it into the array and join() turns all the chars in the array into a string
+//done
